@@ -10,10 +10,11 @@ from shutil import rmtree
 from selenium.webdriver.common.keys import Keys
 
 
-service = Service('/home/jy/projects/autocvat/chromedriver')
+service = Service('/home/jy/projects/workingscripts/autocvat/chromedriver')
 service.start()
 driver = webdriver.Remote(service.service_url)
 driver.get('http://192.168.100.222:8080/auth/login')
+time.sleep(0.5)
 username = driver.find_element_by_id("username")
 password = driver.find_element_by_id("password")
 
@@ -22,7 +23,7 @@ password.send_keys("ilab")
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="root"]/div/div/form/div[3]/div/div/div/button').click()
 time.sleep(1)
-driver.get('http://192.168.100.222:8080/projects/4')
+driver.get('http://192.168.100.222:8080/projects/6')
 time.sleep(15)
 
 

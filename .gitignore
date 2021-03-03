@@ -1,2 +1,7 @@
 /autocvat/chromedriver
 .idea/
+/autocollection/2021-03-02-10-13-43_EXPORT_CSV_2176571_340_0.csv
+/settings.local.toml
+
+# Ignore dynaconf secret files
+.secrets.*
