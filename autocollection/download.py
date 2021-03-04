@@ -4,7 +4,7 @@ import ast
 import requests
 from tqdm import tqdm
 from autocollection.aliyun_oss import oss_delete_file
-df = pd.read_csv('2021-03-02-10-13-43_EXPORT_CSV_2176571_340_0.csv')
+df = pd.read_csv('执行结果1.txt')
 df = df.drop('id', axis=1)
 groups = df.groupby('type')
 for group_name,group in groups:
