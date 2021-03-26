@@ -5,19 +5,21 @@ import requests
 from tqdm import tqdm
 import cv2
 from autocollection.aliyun_oss import oss_delete_file
-df = pd.read_csv('ultraundetacted_03-22.txt')
-
-
-for index, row in tqdm(df.iterrows()):
-    did = row['device_id']
-    url = row["video_url"]
-    print(url)
-    vcap = cv2.VideoCapture(url)
-    success, frame = vcap.read()
-    cv2.imwrite(,frame)
+# df = pd.read_csv('ultraundetacted_03-22.txt')
+#
+#
+# for index, row in tqdm(df.iterrows()):
+#     did = row['device_id']
+#     url = row["video_url"]
+#     print(url)
+#     vcap = cv2.VideoCapture(url)
+#     success, frame = vcap.read()
+#     cv2.imshow('img', frame)
+#     cv2.waitKey(0)
+#     cv2.destroyAllWindows()
     # location = ast.literal_eval(location)
         # print(row)
-        # print(location[0])
+
 
 # with open('2021-03-02-10-13-43_EXPORT_CSV_2176571_340_0.csv','r') as txt:
 #     lines = txt.readlines()
