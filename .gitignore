@@ -7,3 +7,4 @@
 .secrets.*
 /autocollection/sink/
 /autocollection/ultrasonic/
+/paddleocr_test/ocr_models/
