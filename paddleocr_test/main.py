@@ -1,4 +1,4 @@
-from paddleocr import PaddleOCR, draw_ocr
+# from paddleocr import PaddleOCR, draw_ocr
 from PIL import Image
 
 # 模型路径下必须含有model和params文件
