@@ -54,9 +54,9 @@ def crop_image( obj, w, h, frame_with_color):
     return obj_crop_image_color_opencv
 
 
-df = pd.read_csv('obj_04_13_exported.csv')
+df = pd.read_csv('noobj_04_13_exported.csv')
 subdf = df[['location','image_url']]
-for root, dirs, files in os.walk('ultra_obj_selected'):
+for root, dirs, files in os.walk('ultra_nobj_selected'):
     for file in tqdm(files):
         fname = file.split('.')[0]
         location = subdf[subdf['image_url'].str.contains(fname)]["location"]
@@ -74,13 +74,13 @@ for root, dirs, files in os.walk('ultra_obj_selected'):
         img_draw = copy.deepcopy(img)
         cv2.rectangle(img_draw,(x1,y1),(x2,y2), (255,255,0),2)
 
-        save_path = file.replace('ultra_obj_selected','ultra_obj_selected_draw')
+        save_path = file.replace('ultra_nobj_selected','ultra_nobj_selected_draw')
         save_dir = "/".join(save_path.split('/')[:-1])
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
         cv2.imwrite(save_path,img_draw)
 
-        save_path_crop = file.replace('ultra_obj_selected','ultra_obj_selected_crop')
+        save_path_crop = file.replace('ultra_nobj_selected','ultra_nobj_selected_crop')
         save_dir_crop = "/".join(save_path_crop.split('/')[:-1])
         if not os.path.exists(save_dir_crop):
             os.makedirs(save_dir_crop)
